@@ -1,0 +1,19 @@
+-- By default this file is used by `parseRoutesFile` in Foundation.hs
+-- Syntax for this file here: https://www.yesodweb.com/book/routing-and-handlers
+
+/static StaticR Static appStatic --static subsite for static files
+-- so there is a /static route
+-- inside the static folder you can create txt and html files
+-- for example static/example.html will show up in /static/example.html route
+
+/favicon.ico FaviconR GET
+/robots.txt RobotsR GET
+
+/ HomeR GET POST
+-- HomeR route supports GET and POST requests
+
+/greet/#{Text} GreetR GET
+-- the greet route uses GreetR and supports GET requests
+-- #{Text} represents url parameter
+
+/comments CommentR POST
